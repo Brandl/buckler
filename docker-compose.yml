@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+  app:
+    build: .
+    environment:
+      - STATIC_SECRET=secret
+    expose:
+      - "81"
+
+  nginx:
+    image: nginx:stable-alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - app
+

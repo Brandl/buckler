@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+jinja2
+pyotp
+qrcode
+python-multipart
+fastapi-jwt-auth
